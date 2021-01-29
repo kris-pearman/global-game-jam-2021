@@ -44,7 +44,7 @@ script = ExtResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 385.785, 254.485 )
 
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
+[node name="Pickup" parent="." instance=ExtResource( 2 )]
 position = Vector2( 574.984, 271.224 )
 
 [node name="TileMap" type="TileMap" parent="."]

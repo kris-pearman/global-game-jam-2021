@@ -8,3 +8,5 @@ func _ready():
 
 func on_pickup(type,value):
 	get_parent().queue_free()
+
+
