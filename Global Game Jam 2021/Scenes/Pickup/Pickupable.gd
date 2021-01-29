@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 
@@ -7,4 +7,4 @@ func _ready():
 
 
 func on_pickup(type,value):
-	queue_free()
+	get_parent().queue_free()
