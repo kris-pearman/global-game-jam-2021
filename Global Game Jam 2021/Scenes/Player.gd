@@ -20,4 +20,10 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	check_collision()
+
+func check_collision():
+	for i in get_slide_count():
+			var collision = get_slide_collision(i)
+			#print("Collided with: ", collision.collider.name)
 	
