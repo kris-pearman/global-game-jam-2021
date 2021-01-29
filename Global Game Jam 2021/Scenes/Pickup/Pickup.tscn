@@ -7,8 +7,6 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Pickup" type="Node2D"]
-
-[node name="Pickupable" type="Node" parent="."]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

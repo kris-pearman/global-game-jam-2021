@@ -6,14 +6,29 @@
 
 [node name="Game" type="Node"]
 
-[node name="UI" type="Control" parent="."]
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 385.785, 254.485 )
+
+[node name="Pickup" parent="." instance=ExtResource( 2 )]
+position = Vector2( 574.984, 271.224 )
+type = "coffee"
+value = -10
+
+[node name="Pickup2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 454.181, 430.07 )
+type = "booze"
+value = 10
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="UI"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI"]
 margin_right = 1025.0
 margin_bottom = 54.0
 size_flags_horizontal = 3
@@ -22,11 +37,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/MarginContainer"]
 margin_right = 1025.0
 margin_bottom = 54.0
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/MarginContainer/VBoxContainer"]
 margin_right = 1025.0
 margin_bottom = 54.0
 custom_constants/margin_right = 100
@@ -34,18 +49,9 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 100
 custom_constants/margin_bottom = 20
 
-[node name="DrunkBar" type="ProgressBar" parent="UI/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="DrunkBar" type="ProgressBar" parent="CanvasLayer/UI/MarginContainer/VBoxContainer/MarginContainer"]
 margin_left = 100.0
 margin_top = 20.0
 margin_right = 925.0
 margin_bottom = 34.0
 script = ExtResource( 3 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 385.785, 254.485 )
-
-[node name="Pickup" parent="." instance=ExtResource( 2 )]
-position = Vector2( 574.984, 271.224 )
-
-[node name="TileMap" type="TileMap" parent="."]
-format = 1
