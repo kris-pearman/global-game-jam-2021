@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Global Game Jam 2021"
 config/icon="res://icon.png"
 
+[autoload]
+
+Events="*res://Globals/Events.gd"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
