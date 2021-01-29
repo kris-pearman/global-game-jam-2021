@@ -17,3 +17,6 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true

@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Pickup/Pickupable.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/PickupPlaceholder.png" type="Texture" id=2]
 
-[node name="Node2D" type="Node2D"]
+[node name="Pickup" type="Node2D"]
 
 [node name="Pickupable" type="Node" parent="."]
 script = ExtResource( 1 )
