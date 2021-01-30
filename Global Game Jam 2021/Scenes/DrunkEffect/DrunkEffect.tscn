@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+//uniform sampler2D displace:hint_albedo;
+//uniform float dispAmt: hint_range(0,0.1);
+//uniform float abberationAmt:hint_range(0,0.1);
+uniform vec4 tint : hint_color;
+
+void fragment()
+{
+	vec4 color = texture(SCREEN_TEXTURE,SCREEN_UV);
+	
+	color = mix(color,tint,0.3);
+	color.rgb = mix(vec3(0.5),color.rgb,1.4);
+	//vec2 newUV = SCREEN_UV * disp.xy * dispAmt
+	
+}
+
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/tint = Color( 0.92549, 0.141176, 0.141176, 1 )
+
+[node name="DrunkEffect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1022.49, 337.916 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.458824 )
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.290196, 0.701961, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
