@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Art/TextMessagePlaceholder.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/TextMessage/TextMessage.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/TextMessage/Text.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/Thought Bubble.wav" type="AudioStream" id=4]
 
 [node name="NinePatchRect" type="NinePatchRect"]
 margin_right = 406.0
@@ -31,3 +32,8 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true
