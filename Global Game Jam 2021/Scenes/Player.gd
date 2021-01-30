@@ -41,6 +41,7 @@ func _physics_process(delta):
 	check_collision()
 	check_animation()
 	check_player_move()
+	drink_sound_check()
 
 
 
@@ -89,3 +90,12 @@ func set_timer():
 func _on_DrinkTimer_timeout():
 	haltOthers = false
 	$DrinkTimer.wait_time = 0.9
+	
+	
+func drink_sound_check():
+	if haltOthers == true:
+		if $DrinkTimer.time_left < 0.6 and $DrinkTimer.time_left > 0.59:
+			$DrinkTimer/Drinking.play()
+	if $DrinkTimer.time_left < 0.5:
+			$DrinkTimer/Drinking.stop()
+	

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/black.png" type="Texture" id=1]
+
+[node name="Win Screen" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 518.656, 308.011 )
+scale = Vector2( 16.332, 9.70763 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="Sprite"]
+margin_left = -18.2407
+margin_top = -9.73727
+margin_right = 24.7593
+margin_bottom = 15.2627
+text = "WIN"
+percent_visible = -0.333333
+__meta__ = {
+"_edit_use_anchors_": false
+}
