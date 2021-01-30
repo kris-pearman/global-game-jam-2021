@@ -52,6 +52,9 @@ margin_right = 925.0
 margin_bottom = 34.0
 script = ExtResource( 3 )
 
+[node name="WithdrawalTimer" type="Timer" parent="CanvasLayer/UI/MarginContainer/VBoxContainer/MarginContainer/DrunkBar"]
+wait_time = 2.0
+
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -5.0
@@ -86,12 +89,12 @@ position = Vector2( 472.785, 268.485 )
 [node name="Pickup" parent="." instance=ExtResource( 2 )]
 position = Vector2( 791.984, 345.224 )
 type = "coffee"
-value = -10
+value = -1000
 
 [node name="Pickup2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 229.181, 212.07 )
 type = "booze"
-value = 10
+value = 1000
 
 [node name="Area2D" parent="." instance=ExtResource( 11 )]
 position = Vector2( 208.235, 411.131 )

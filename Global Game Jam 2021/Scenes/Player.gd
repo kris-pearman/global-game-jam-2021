@@ -10,6 +10,11 @@ var haltOthers = false
 var in_cutscene: bool = false
 var message_direction = "right"
 
+
+func _ready():
+	Events.player = self
+
+
 func get_input():
 	velocity = Vector2()
 	if delayframe == 10:
@@ -43,6 +48,9 @@ func _physics_process(delta):
 		check_animation()
 		check_player_move()
 		drink_sound_check()
+	
+	if playerMove == true:
+		Events.emit_signal("player_moved",self)
 
 
 func check_collision():

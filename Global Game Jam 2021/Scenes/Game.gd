@@ -25,15 +25,15 @@ func _process(delta):
 	$"Sober Layer".volume_db = soberVol
 	$"Critical Layer".volume_db = critVol
 	convertMeterToVol()
-	if Input.is_action_pressed('right'):
-		if metervalue < 100:
-			metervalue += 1
-		if critmeter < 100:
-			critmeter += 6.25
-	if Input.is_action_pressed('left'):
-		if metervalue > 0:
-			metervalue -= 1
-	$CanvasLayer/UI/MarginContainer/VBoxContainer/MarginContainer/DrunkBar.value = metervalue
+#	if Input.is_action_pressed('right'):
+#		if metervalue < 100:
+#			metervalue += 1
+#		if critmeter < 100:
+#			critmeter += 6.25
+#	if Input.is_action_pressed('left'):
+#		if metervalue > 0:
+#			metervalue -= 1
+#	$CanvasLayer/UI/MarginContainer/VBoxContainer/MarginContainer/DrunkBar.value = metervalue
 
 	
 func updateSoberAudio():
