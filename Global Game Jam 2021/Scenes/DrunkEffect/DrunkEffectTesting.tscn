@@ -1,4 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Art/BuildingTest.jpg" type="Texture" id=2]
+[ext_resource path="res://Scenes/ScreenShake/Screenshake.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -63,11 +67,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 467, 291 )
+scale = Vector2( 0.503333, 0.503333 )
+texture = ExtResource( 2 )
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 672.486, 283.916 )
+
+[node name="Screenshake" parent="Node2D/Player/Camera2D" index="0" instance=ExtResource( 3 )]
+
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource( 2 )
+anchor_top = -0.00166667
 anchor_right = 1.0
 anchor_bottom = 0.998333
+margin_left = -19.0
+margin_top = -13.0
+margin_right = -19.0
+margin_bottom = -13.0
 color = Color( 0.572549, 0.32549, 0.32549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[editable path="Node2D"]
