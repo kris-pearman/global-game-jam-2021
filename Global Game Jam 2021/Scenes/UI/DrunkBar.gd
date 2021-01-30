@@ -1,13 +1,13 @@
 extends ProgressBar
 
 
-const drunkenness_start:float = 0.6
+const drunkenness_start:float = 0.5
 const withdrawal_start:float = 0.3
 
 
 func _ready():
 	max_value = 3000
-	value = 1500
+	value = 2900
 	Events.connect("player_collided_with_pickup",self,"on_pickup")
 	Events.connect("player_moved",self,"on_player_moved")
 
@@ -31,7 +31,7 @@ func _process(delta):
 			$WithdrawalTimer.stop()
 	if value <= 0:
 		start_game_over_timer()
-	elif value >= max_value:
+	elif value >= max_value - 50:
 		start_game_over_timer()
 
 
@@ -51,4 +51,4 @@ func _on_game_over_timer_timeout():
 
 func _on_WithdrawalTimer_timeout():
 	print("shake")
-	Events.screenshake.start(1,250,1)
+	Events.screenshake.start(1,150,1.5)
