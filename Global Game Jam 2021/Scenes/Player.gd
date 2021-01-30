@@ -32,8 +32,8 @@ func get_input():
 
 		
 
-#func _ready():
-	
+func _ready():
+	Events.player = self
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	get_input()
@@ -41,6 +41,9 @@ func _physics_process(delta):
 	check_collision()
 	check_animation()
 	check_player_move()
+	if playerMove == true:
+		Events.emit_signal("player_moved",self)
+
 
 
 

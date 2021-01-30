@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/DrunkEffect/DrunkEffect.gd" type="Script" id=1]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -8,6 +10,8 @@ render_mode unshaded;
 //uniform float dispAmt: hint_range(0,0.1);
 //uniform float abberationAmt:hint_range(0,0.1);
 uniform vec4 tint : hint_color;
+uniform float intensity = 1;
+
 
 float rand(vec2 coord){
 	return fract(sin(dot(coord, vec2(12.9898, 78.233)))* 43758.5453123);
@@ -39,12 +43,12 @@ void fragment()
 	vec2 distort1 = vec2(noise(noisecoord1 + motion1), noise(noisecoord2 + motion1));
 	vec2 distort2 = vec2(noise(noisecoord1 + motion2), noise(noisecoord2 + motion2));
 	
-	vec2 distort_sum = (distort1 + distort2) / 30.0;
+	vec2 distort_sum = intensity * ( (distort1 + distort2) / 30.0 );
 	
 	vec4 color = texture(SCREEN_TEXTURE,SCREEN_UV + distort_sum,0.0);
 	
-	color = mix(color,tint,0.3);
-	color.rgb = mix(vec3(0.5),color.rgb,1.4);
+	//color = mix(color,tint,0.3);
+	//color.rgb = mix(vec3(0.5),color.rgb,1.4);
 	//vec2 newUV = SCREEN_UV * disp.xy * dispAmt
 	
 	COLOR = color;
@@ -54,11 +58,13 @@ void fragment()
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
-shader_param/tint = Color( 0.92549, 0.141176, 0.141176, 1 )
+shader_param/tint = Color( 1, 0.552941, 0.552941, 1 )
+shader_param/intensity = 0.0
 
 [node name="DrunkEffect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -67,6 +73,8 @@ __meta__ = {
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 0.998333
+margin_top = 2.0
+margin_bottom = 2.0
 color = Color( 0.572549, 0.32549, 0.32549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

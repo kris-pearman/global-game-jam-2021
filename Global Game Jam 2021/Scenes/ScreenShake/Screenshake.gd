@@ -4,12 +4,18 @@ const TRANS = Tween.TRANS_SINE
 const EASE = Tween.EASE_IN_OUT
 
 var amplitude = 0
+var target_intensity = 0
 
 onready var camera = get_parent()
 
 
 func _ready():
-	start(0,250,1)
+	Events.screenshake = self
+	start(1,250,1)
+
+
+func set_intensity(value):
+	target_intensity = value
 
 
 func start(duration,frequency,_amplitude):
