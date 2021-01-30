@@ -1343,15 +1343,15 @@ __meta__ = {
 }
 
 [node name="Squash" type="Node2D" parent="."]
-scale = Vector2( 1.00079, 0.998425 )
+scale = Vector2( 1.00712, 0.98576 )
 
 [node name="Root" type="Node2D" parent="Squash"]
-position = Vector2( 0, -99.7446 )
-rotation = 0.060038
+position = Vector2( 0, -98.9084 )
+rotation = 0.0935501
 
 [node name="Right Arm" type="Sprite" parent="Squash/Root"]
 position = Vector2( -22.2598, 6.3811 )
-rotation = 0.372306
+rotation = 0.0956986
 texture = ExtResource( 9 )
 offset = Vector2( -6.91995, 23.1412 )
 
@@ -1366,60 +1366,61 @@ texture = ExtResource( 10 )
 
 [node name="Right Leg" type="Sprite" parent="Squash/Root"]
 position = Vector2( -14.7911, 57.9834 )
-rotation = -0.975884
+rotation = -0.670584
 texture = ExtResource( 8 )
 offset = Vector2( -1.40148, 17.1683 )
 
 [node name="Left Leg" type="Sprite" parent="Squash/Root"]
 position = Vector2( 11.6667, 61.6667 )
-rotation = 0.965484
+rotation = 0.663437
 texture = ExtResource( 11 )
 offset = Vector2( 0.833335, 16.6667 )
 
 [node name="Left Coat" type="Sprite" parent="Squash/Root"]
 position = Vector2( 10.0647, 9.36977 )
-rotation = -0.0987315
+rotation = -0.131145
 texture = ExtResource( 7 )
 offset = Vector2( 6.36397, 27.2236 )
 
 [node name="Right Coat" type="Sprite" parent="Squash/Root"]
 position = Vector2( -16.8054, 7.24845 )
-rotation = -0.155427
+rotation = -0.206454
 texture = ExtResource( 3 )
 offset = Vector2( -6.36397, 29.6985 )
 
 [node name="Left Arm" type="Sprite" parent="Squash/Root"]
 position = Vector2( 15.7215, 2.29871 )
-rotation = -0.394258
+rotation = -0.101341
 texture = ExtResource( 5 )
 offset = Vector2( 14.1421, 27.5772 )
 
 [node name="Head" type="Sprite" parent="Squash/Root"]
-position = Vector2( -3.03991, -9.19374 )
+position = Vector2( -3.46598, -11.3609 )
 texture = ExtResource( 12 )
 offset = Vector2( 2.12132, -35.7089 )
 
 [node name="Left Hair" type="Sprite" parent="Squash/Root/Head"]
 position = Vector2( -4.19194, -69.8376 )
-rotation = 0.0452423
+rotation = 0.00841675
 texture = ExtResource( 4 )
 offset = Vector2( -21.5668, 24.7487 )
 
 [node name="Right Hair" type="Sprite" parent="Squash/Root/Head"]
 position = Vector2( 0.353561, -66.8216 )
-rotation = -0.0651165
+rotation = -0.0136107
 texture = ExtResource( 6 )
 offset = Vector2( 21.9203, 27.9307 )
 
 [node name="Scarf" type="Sprite" parent="Squash/Root"]
-position = Vector2( -2.01962, 4.23344 )
+position = Vector2( -2.05667, 3.5057 )
 texture = ExtResource( 2 )
 offset = Vector2( 2.82843, -7.42462 )
 
 [node name="Bottle" type="Sprite" parent="Squash/Root"]
 visible = false
-position = Vector2( -56.6923, 35.6872 )
-rotation = -0.926486
+position = Vector2( -47.3801, 43.9765 )
+rotation = -1.20309
+scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
