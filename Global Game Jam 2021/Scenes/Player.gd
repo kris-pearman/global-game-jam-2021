@@ -4,6 +4,7 @@ export (int) var speed = 200
 var velocity = Vector2()
 
 var in_cutscene: bool = false
+var message_direction = "right"
 
 func get_input():
 	velocity = Vector2()
@@ -32,3 +33,18 @@ func check_collision():
 
 func play_cutscene(id):
 	in_cutscene = true
+	CutScenes.play_scene(id)
+	get_next_message()
+
+func get_next_message():
+	var message = CutScenes.get_next_message()
+	if message != "":
+		var TextMessage = preload("res://Scenes/TextMessage/TextMessage.tscn").instance()
+		if message_direction == "left":
+			message_direction = "right"
+		else:
+			message_direction = "left"
+		TextMessage.showText(message, message_direction)
+		add_child(TextMessage)
+	else:
+		in_cutscene = false
