@@ -42,7 +42,7 @@ func _physics_process(delta):
 		check_collision()
 		check_animation()
 		check_player_move()
-    drink_sound_check()
+		drink_sound_check()
 
 
 func check_collision():
