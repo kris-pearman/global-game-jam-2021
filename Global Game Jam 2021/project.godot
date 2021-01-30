@@ -16,7 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Global Game Jam 2021"
+run/main_scene="res://Scenes/Screens/Title.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Events="*res://Globals/Events.gd"
+CutScenes="*res://Globals/CutScenes.gd"
 
 [input]
 

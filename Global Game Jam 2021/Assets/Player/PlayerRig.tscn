@@ -1291,45 +1291,45 @@ tracks/25/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "drink"
 
-[sub_resource type="AnimationNodeAnimation" id=5]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "run"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=7]
-xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=8]
 xfade_time = 0.2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+switch_mode = 2
+xfade_time = 0.1
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=12]
+switch_mode = 2
 xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
-switch_mode = 2
 xfade_time = 0.1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=14]
-switch_mode = 2
-xfade_time = 0.1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
-xfade_time = 0.1
-
-[sub_resource type="AnimationNodeStateMachine" id=9]
-states/drink/node = SubResource( 11 )
+[sub_resource type="AnimationNodeStateMachine" id=14]
+states/drink/node = SubResource( 5 )
 states/drink/position = Vector2( 387, 226 )
-states/idle/node = SubResource( 5 )
+states/idle/node = SubResource( 6 )
 states/idle/position = Vector2( 275, 110 )
-states/run/node = SubResource( 6 )
+states/run/node = SubResource( 7 )
 states/run/position = Vector2( 502, 110 )
-transitions = [ "idle", "run", SubResource( 7 ), "run", "idle", SubResource( 8 ), "idle", "drink", SubResource( 12 ), "drink", "idle", SubResource( 13 ), "drink", "run", SubResource( 14 ), "run", "drink", SubResource( 15 ) ]
+transitions = [ "idle", "run", SubResource( 8 ), "run", "idle", SubResource( 9 ), "idle", "drink", SubResource( 10 ), "drink", "idle", SubResource( 11 ), "drink", "run", SubResource( 12 ), "run", "drink", SubResource( 13 ) ]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
 [node name="PlayerRig" type="Node2D"]
 scale = Vector2( 0.6, 0.6 )
@@ -1352,6 +1352,7 @@ rotation = 0.0935501
 [node name="Right Arm" type="Sprite" parent="Squash/Root"]
 position = Vector2( -22.2598, 6.3811 )
 rotation = 0.0956986
+
 texture = ExtResource( 9 )
 offset = Vector2( -6.91995, 23.1412 )
 
@@ -1430,7 +1431,9 @@ anims/idle = SubResource( 3 )
 anims/run = SubResource( 4 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 9 )
+tree_root = SubResource( 14 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 10 )
+parameters/playback = SubResource( 15 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
