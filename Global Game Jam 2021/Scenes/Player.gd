@@ -35,12 +35,15 @@ func get_input():
 
 
 func _physics_process(delta):
+
 	if !in_cutscene:
 		get_input()
 		velocity = move_and_slide(velocity)
 		check_collision()
 		check_animation()
 		check_player_move()
+    drink_sound_check()
+
 
 func check_collision():
 	for i in get_slide_count():
@@ -84,6 +87,15 @@ func _on_DrinkTimer_timeout():
 	haltOthers = false
 	$DrinkTimer.wait_time = 0.9
 
+func drink_sound_check():
+	if haltOthers == true:
+		if $DrinkTimer.time_left < 0.6 and $DrinkTimer.time_left > 0.59:
+			$DrinkTimer/Drinking.play()
+	if $DrinkTimer.time_left < 0.5:
+			$DrinkTimer/Drinking.stop()
+	
+
+
 func play_cutscene(id):
 	in_cutscene = true
 	CutScenes.play_scene(id)
@@ -101,3 +113,4 @@ func get_next_message():
 		add_child(TextMessage)
 	else:
 		in_cutscene = false
+

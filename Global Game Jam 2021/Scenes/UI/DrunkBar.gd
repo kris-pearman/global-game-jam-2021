@@ -38,7 +38,7 @@ func _process(delta):
 func start_game_over_timer():
 	var timer = Timer.new()
 	timer.wait_time = 1
-	timer.connect("timeout",self,"_on_game_over_timer_timeout") 
+	timer.connect("timeout",self,"_on_game_over_timer_timeout")
 	add_child(timer)
 	timer.start()
 	# Stop player controls
