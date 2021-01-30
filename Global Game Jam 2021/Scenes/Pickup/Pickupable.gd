@@ -12,4 +12,3 @@ func on_pickup(object):
 	if object == self:
 		queue_free()
 
-

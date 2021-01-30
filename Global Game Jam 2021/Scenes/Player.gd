@@ -47,7 +47,7 @@ func check_collision():
 			var collision = get_slide_collision(i)
 			print("Collided with: ", collision.collider.name)
 
-	
+
 func check_animation():
 	if haltOthers == false:
 		if playerMove == true:
@@ -66,19 +66,19 @@ func check_player_move():
 				footstepsplaying = false
 		else:
 			delayframe +=1
-			
 
-			
+
+
 func drink_animation():
 	$PlayerRig.update_animation("drink")
 	footstepsplaying = false
 	$Footsteps.stop()
-	
+
 func set_timer():
 	$DrinkTimer.start()
 	haltOthers = true
 	footstepsplaying = false
-	
+
 
 func _on_DrinkTimer_timeout():
 	haltOthers = false
