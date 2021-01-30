@@ -3,6 +3,8 @@ extends KinematicBody2D
 export (int) var speed = 200
 var velocity = Vector2()
 
+var in_cutscene: bool = false
+
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed('right'):
@@ -18,12 +20,15 @@ func get_input():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
-	check_collision()
+	if !in_cutscene:
+		get_input()
+		velocity = move_and_slide(velocity)
+		check_collision()
 
 func check_collision():
 	for i in get_slide_count():
 			var collision = get_slide_collision(i)
 			print("Collided with: ", collision.collider.name)
-	
+
+func play_cutscene(id):
+	in_cutscene = true
