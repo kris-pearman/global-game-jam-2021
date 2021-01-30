@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Player/full.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Player/Cutouts/Scarf.PNG" type="Texture" id=2]
@@ -318,8 +318,9 @@ tracks/24/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "drink"
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Squash/Root/Body:position")
 tracks/0/interp = 1
@@ -436,7 +437,7 @@ tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.3, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"transitions": PoolRealArray( 2, 1, -2, 1 ),
 "update": 0,
 "values": [ 0.0, 11.0316, 11.0316, 0.0 ]
 }
@@ -508,7 +509,7 @@ tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.2, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"transitions": PoolRealArray( 2, 1, -2, 1 ),
 "update": 0,
 "values": [ 0.0, 5.86622, 5.86622, 0.0 ]
 }
@@ -519,10 +520,10 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -4.19194, -69.8376 ) ]
+"values": [ Vector2( -4.19194, -69.8376 ), Vector2( -4.19194, -69.8376 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Squash/Root/Head/Left Hair:rotation_degrees")
@@ -531,10 +532,10 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.0, 7.04193 ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Squash/Root/Right Arm:position")
@@ -556,7 +557,7 @@ tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0, 0.2, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"transitions": PoolRealArray( 2, 1, -2, 1 ),
 "update": 0,
 "values": [ 0.0, 92.1291, 92.1291, 0.0 ]
 }
@@ -591,10 +592,10 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.353561, -66.8216 ) ]
+"values": [ Vector2( 0.353561, -66.8216 ), Vector2( 0.353561, -66.8216 ) ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("Squash/Root/Head/Right Hair:rotation_degrees")
@@ -603,10 +604,10 @@ tracks/23/loop_wrap = true
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.0, -8.25321 ]
 }
 tracks/24/type = "value"
 tracks/24/path = NodePath("Squash:scale")
@@ -615,10 +616,10 @@ tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 0.25, 0.4, 0.85 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.1, 0.8 ), Vector2( 0.9, 1.05 ), Vector2( 1, 1 ) ]
 }
 tracks/25/type = "value"
 tracks/25/path = NodePath("Squash/Root/Right Arm/BottleRT:position")
@@ -640,7 +641,7 @@ tracks/26/imported = false
 tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0, 0.2, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"transitions": PoolRealArray( 2, 1, -2, 1 ),
 "update": 0,
 "values": [ -74.4153, 2.06831, 2.06831, -74.4153 ]
 }
@@ -973,8 +974,7 @@ tracks/25/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "run"
+[sub_resource type="Animation" id=4]
 length = 0.8
 loop = true
 step = 0.05
@@ -1291,6 +1291,9 @@ tracks/25/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "drink"
+
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "idle"
 
@@ -1303,12 +1306,28 @@ xfade_time = 0.2
 [sub_resource type="AnimationNodeStateMachineTransition" id=8]
 xfade_time = 0.2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+switch_mode = 2
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+switch_mode = 2
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+xfade_time = 0.1
+
 [sub_resource type="AnimationNodeStateMachine" id=9]
+states/drink/node = SubResource( 11 )
+states/drink/position = Vector2( 387, 226 )
 states/idle/node = SubResource( 5 )
 states/idle/position = Vector2( 275, 110 )
 states/run/node = SubResource( 6 )
 states/run/position = Vector2( 502, 110 )
-transitions = [ "idle", "run", SubResource( 7 ), "run", "idle", SubResource( 8 ) ]
+transitions = [ "idle", "run", SubResource( 7 ), "run", "idle", SubResource( 8 ), "idle", "drink", SubResource( 12 ), "drink", "idle", SubResource( 13 ), "drink", "run", SubResource( 14 ), "run", "drink", SubResource( 15 ) ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=10]
 
@@ -1324,14 +1343,15 @@ __meta__ = {
 }
 
 [node name="Squash" type="Node2D" parent="."]
-scale = Vector2( 1.01932, 0.967796 )
+scale = Vector2( 1.00079, 0.998425 )
 
 [node name="Root" type="Node2D" parent="Squash"]
-position = Vector2( 0, -90 )
+position = Vector2( 0, -99.7446 )
+rotation = 0.060038
 
 [node name="Right Arm" type="Sprite" parent="Squash/Root"]
 position = Vector2( -22.2598, 6.3811 )
-rotation = 0.0557356
+rotation = 0.372306
 texture = ExtResource( 9 )
 offset = Vector2( -6.91995, 23.1412 )
 
@@ -1346,66 +1366,67 @@ texture = ExtResource( 10 )
 
 [node name="Right Leg" type="Sprite" parent="Squash/Root"]
 position = Vector2( -14.7911, 57.9834 )
+rotation = -0.975884
 texture = ExtResource( 8 )
 offset = Vector2( -1.40148, 17.1683 )
 
 [node name="Left Leg" type="Sprite" parent="Squash/Root"]
 position = Vector2( 11.6667, 61.6667 )
+rotation = 0.965484
 texture = ExtResource( 11 )
 offset = Vector2( 0.833335, 16.6667 )
 
 [node name="Left Coat" type="Sprite" parent="Squash/Root"]
 position = Vector2( 10.0647, 9.36977 )
-rotation = -0.0418674
+rotation = -0.0987315
 texture = ExtResource( 7 )
 offset = Vector2( 6.36397, 27.2236 )
 
 [node name="Right Coat" type="Sprite" parent="Squash/Root"]
 position = Vector2( -16.8054, 7.24845 )
-rotation = 0.0437882
+rotation = -0.155427
 texture = ExtResource( 3 )
 offset = Vector2( -6.36397, 29.6985 )
 
 [node name="Left Arm" type="Sprite" parent="Squash/Root"]
 position = Vector2( 15.7215, 2.29871 )
-rotation = -0.0623223
+rotation = -0.394258
 texture = ExtResource( 5 )
 offset = Vector2( 14.1421, 27.5772 )
 
 [node name="Head" type="Sprite" parent="Squash/Root"]
-position = Vector2( -2.30969, -5.47947 )
+position = Vector2( -3.03991, -9.19374 )
 texture = ExtResource( 12 )
 offset = Vector2( 2.12132, -35.7089 )
 
 [node name="Left Hair" type="Sprite" parent="Squash/Root/Head"]
 position = Vector2( -4.19194, -69.8376 )
-rotation = 0.102667
+rotation = 0.0452423
 texture = ExtResource( 4 )
 offset = Vector2( -21.5668, 24.7487 )
 
 [node name="Right Hair" type="Sprite" parent="Squash/Root/Head"]
 position = Vector2( 0.353561, -66.8216 )
-rotation = -0.0776724
+rotation = -0.0651165
 texture = ExtResource( 6 )
 offset = Vector2( 21.9203, 27.9307 )
 
 [node name="Scarf" type="Sprite" parent="Squash/Root"]
-position = Vector2( -1.95613, 5.48068 )
+position = Vector2( -2.01962, 4.23344 )
 texture = ExtResource( 2 )
 offset = Vector2( 2.82843, -7.42462 )
 
 [node name="Bottle" type="Sprite" parent="Squash/Root"]
 visible = false
-position = Vector2( -45.858, 44.9501 )
-rotation = -1.24306
-scale = Vector2( 1, 1 )
+position = Vector2( -56.6923, 35.6872 )
+rotation = -0.926486
 texture = ExtResource( 13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/default = SubResource( 1 )
-anims/drink = SubResource( 4 )
+anims/drink = SubResource( 2 )
 anims/idle = SubResource( 3 )
-anims/run = SubResource( 2 )
+anims/run = SubResource( 4 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 9 )
