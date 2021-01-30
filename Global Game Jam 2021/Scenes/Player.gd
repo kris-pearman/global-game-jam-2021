@@ -7,9 +7,12 @@ var delayframe = 0
 var footstepsplaying = false
 var haltOthers = false
 
+var in_cutscene: bool = false
+var message_direction = "right"
+
 func get_input():
 	velocity = Vector2()
-	if delayframe == 5:
+	if delayframe == 10:
 		if haltOthers == false:
 			if Input.is_action_pressed('right'):
 				velocity.x += 1
@@ -30,27 +33,23 @@ func get_input():
 				drink_animation()
 				set_timer()
 
-		
 
-#func _ready():
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
-	check_collision()
-	check_animation()
-	check_player_move()
-	drink_sound_check()
 
-
+	if !in_cutscene:
+		get_input()
+		velocity = move_and_slide(velocity)
+		check_collision()
+		check_animation()
+		check_player_move()
+    drink_sound_check()
 
 
 func check_collision():
 	for i in get_slide_count():
 			var collision = get_slide_collision(i)
 			print("Collided with: ", collision.collider.name)
-	
+
 	
 func check_animation():
 	if haltOthers == false:
@@ -60,12 +59,9 @@ func check_animation():
 				$Footsteps.play()
 				footstepsplaying = true
 
-
-	
-
 func check_player_move():
 	if haltOthers == false:
-		if delayframe == 5:
+		if delayframe == 10:
 			if velocity.x == 0 and velocity.y == 0:
 				$PlayerRig.update_animation("idle")
 				$Footsteps.stop()
@@ -90,8 +86,7 @@ func set_timer():
 func _on_DrinkTimer_timeout():
 	haltOthers = false
 	$DrinkTimer.wait_time = 0.9
-	
-	
+
 func drink_sound_check():
 	if haltOthers == true:
 		if $DrinkTimer.time_left < 0.6 and $DrinkTimer.time_left > 0.59:
@@ -99,3 +94,23 @@ func drink_sound_check():
 	if $DrinkTimer.time_left < 0.5:
 			$DrinkTimer/Drinking.stop()
 	
+
+
+func play_cutscene(id):
+	in_cutscene = true
+	CutScenes.play_scene(id)
+	get_next_message()
+
+func get_next_message():
+	var message = CutScenes.get_next_message()
+	if message != "":
+		var TextMessage = preload("res://Scenes/TextMessage/TextMessage.tscn").instance()
+		if message_direction == "left":
+			message_direction = "right"
+		else:
+			message_direction = "left"
+		TextMessage.showText(message, message_direction)
+		add_child(TextMessage)
+	else:
+		in_cutscene = false
+
