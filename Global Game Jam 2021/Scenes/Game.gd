@@ -24,6 +24,7 @@ func _process(delta):
 	convertMeterToVol()
 	$"Sober Layer".volume_db = soberVol
 	$"Critical Layer".volume_db = critVol
+	check_drunk_audio()
 
 
 func _on_Intro_finished():
@@ -62,4 +63,10 @@ func getTrack3VolumeDb(meterValue, useModifier, threshold):
 	var progress = (conversionFactor * meterValue)
 	var normalisationFactor = float(meterValue - threshold) / float(10 - threshold)
 	return  (progress * normalisationFactor) + lowerLimit
-
+	
+func check_drunk_audio():
+	if Events.drunk_meter.value > 8:
+		if !$Drunk.playing:
+			$Drunk.play()
+	else:
+		$Drunk.stop()
