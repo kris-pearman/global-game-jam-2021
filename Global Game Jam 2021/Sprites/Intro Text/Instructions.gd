@@ -57,3 +57,8 @@ func _on_Line_4_timeout():
 
 func _on_Change_Slide_timeout():
 	get_tree().change_scene("res://Scenes/Game.tscn")
+	
+	
+func _input(event):
+	if event.is_action_pressed('ui_accept'):
+			get_tree().change_scene("res://Scenes/Game.tscn")

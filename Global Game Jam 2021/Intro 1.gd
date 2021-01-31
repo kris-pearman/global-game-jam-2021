@@ -35,6 +35,9 @@ func _process(delta):
 		$ColorRect2.color[3]+= 0.025
 		$ColorRect3.color[3]+= 0.025
 
+func _input(event):
+	if event.is_action_pressed('ui_accept'):
+			get_tree().change_scene("res://Scenes/Game.tscn")
 
 func _on_Line_2_timeout():
 	line2 = true
