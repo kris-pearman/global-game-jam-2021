@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://End.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/black.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Title Text/End Text.png" type="Texture" id=3]
+[ext_resource path="res://Music/Success.wav" type="AudioStream" id=4]
 
 [node name="End" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,3 +16,8 @@ texture = ExtResource( 2 )
 [node name="End Text" type="Sprite" parent="."]
 position = Vector2( 518.494, 302.059 )
 texture = ExtResource( 3 )
+
+[node name="Ending Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -4.0
+autoplay = true
