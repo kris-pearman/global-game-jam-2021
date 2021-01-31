@@ -28,7 +28,17 @@ func _ready():
 		"There was no doubt. \nThey had seen that same \nspecial thing in the world as I did.",
 		"If only I could remember what \n that was."
 	]
-	var scene2: Array = []
+	var scene2: Array = [
+		"A man came up to me \nafter passing through \nthe vaulted arches.",
+		"He asked why I sat outside \nwhen the most magnificent art \nadorned the walls within.",
+		"There wasn't much I could say. \nThe humble snapshots of my \nworldview",
+		"could never hope to challenge \nthe awe inspired by masters.",
+		"However, before I could even \nrespond to his query, \nthe man saw my painting.",
+		"His lips parted slowly, trembling. \nHis enamored gaze widened.",
+		"Somehow, I had evoked \nsomething special \ndeep within his heart.",
+		"A memory, an emotion-- \nI had no way of knowing.",
+		"I could only smile, \nfulfilled by the thought \nthat my art had given him \nsomething precious."
+	]
 	scene_array.push_back(scene0)
 	scene_array.push_back(scene1)
 	scene_array.push_back(scene2)
