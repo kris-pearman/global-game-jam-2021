@@ -33,7 +33,7 @@ func _process(delta):
 #	if Input.is_action_pressed('left'):
 #		if metervalue > 0:
 #			metervalue -= 1
-#	$CanvasLayer/UI/MarginContainer/VBoxContainer/MarginContainer/DrunkBar.value = metervalue
+#	Events.drunk_meter.value = metervalue
 
 	
 func updateSoberAudio():
@@ -49,7 +49,7 @@ func _on_Intro_finished():
 	$"Critical Layer".play()
 	
 func convertMeterToVol():
-	var currentMeterValue = $CanvasLayer/UI/MarginContainer/VBoxContainer/MarginContainer/DrunkBar.value
+	var currentMeterValue = Events.drunk_meter.value
 	currentMeterValue = (currentMeterValue-100) * -1
 	var threshold = 84
 	var track2Volume = getVolumeDb(currentMeterValue, false, threshold)

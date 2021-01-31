@@ -6,8 +6,9 @@ const withdrawal_start:float = 0.3
 
 
 func _ready():
+	Events.drunk_meter = self
 	max_value = 3000
-	value = 2900
+	value = 1500
 	Events.connect("player_collided_with_pickup",self,"on_pickup")
 	Events.connect("player_moved",self,"on_player_moved")
 
@@ -36,8 +37,9 @@ func _process(delta):
 
 
 func start_game_over_timer():
+	Events.emit_signal("game_over")
 	var timer = Timer.new()
-	timer.wait_time = 1
+	timer.wait_time = 2
 	timer.connect("timeout",self,"_on_game_over_timer_timeout") 
 	add_child(timer)
 	timer.start()
