@@ -58,6 +58,7 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 0, 20 )
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
+step = 0.005
 percent_visible = false
 script = ExtResource( 3 )
 
@@ -126,22 +127,12 @@ position = Vector2( 472.785, 268.485 )
 [node name="Pickup" parent="." instance=ExtResource( 2 )]
 position = Vector2( 791.984, 345.224 )
 type = "coffee"
-value = -1000
+value = -1
 
 [node name="Pickup2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 229.181, 212.07 )
-type = "booze"
-value = 1000
-
-[node name="Pickup3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 295.927, 213.129 )
-type = "booze"
-value = 1000
-
-[node name="Pickup4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 349.96, 213.129 )
 type = "booze"
-value = 1000
+value = 3
 
 [node name="Area2D" parent="." instance=ExtResource( 11 )]
 position = Vector2( 208.235, 411.131 )

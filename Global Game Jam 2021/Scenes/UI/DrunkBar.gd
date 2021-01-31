@@ -7,8 +7,8 @@ const withdrawal_start:float = 0.3
 
 func _ready():
 	Events.drunk_meter = self
-	max_value = 3000
-	value = 1500
+	max_value = 10
+	value = 5
 	Events.connect("player_collided_with_pickup",self,"on_pickup")
 	Events.connect("player_moved",self,"on_player_moved")
 
@@ -18,7 +18,7 @@ func on_pickup(object):
 
 
 func on_player_moved(player):
-	value -= 1
+	value -= 0.005
 
 
 func _process(delta):
@@ -32,7 +32,7 @@ func _process(delta):
 			$WithdrawalTimer.stop()
 	if value <= 0:
 		start_game_over_timer()
-	elif value >= max_value - 50:
+	elif value >= max_value - 1:
 		start_game_over_timer()
 
 
