@@ -21,6 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print($"Critical Layer".volume_db)
 	convertMeterToVol()
 	$"Sober Layer".volume_db = soberVol
 	$"Critical Layer".volume_db = critVol
@@ -38,12 +39,12 @@ func convertMeterToVol():
 	var track2Volume = getVolumeDb(currentMeterValue, false, threshold)
 	var track3Volume = getTrack3VolumeDb(currentMeterValue, true, threshold)
 	soberVol = track2Volume
-	critVol = track2Volume
+	critVol = track3Volume
 
 func getVolumeDb(meterValue, useModifier, threshold):
 	#assumes meterValue = 0-10
-	var lowerLimit = -40
-	var upperLimit = -5
+	var lowerLimit = -50
+	var upperLimit = -3
 	var dbRange = upperLimit - lowerLimit
 
 	var conversionFactor = float(dbRange)/float(10)
