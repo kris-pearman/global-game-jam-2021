@@ -2,6 +2,7 @@ extends Node
 
 var scene_array: Array = []
 var current_scene: Array
+var collected_paintings: int = 0
 
 func _ready():
 	var scene0: Array = [
@@ -33,6 +34,7 @@ func _ready():
 	scene_array.push_back(scene2)
 
 func play_scene(id):
+	collected_paintings += 1
 	current_scene = scene_array[id]
 
 func get_next_message():
