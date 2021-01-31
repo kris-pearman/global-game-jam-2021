@@ -56,7 +56,7 @@ func start_game_over_timer():
 
 
 func _on_game_over_timer_timeout():
-	get_tree().change_scene("res://Scenes/Screens/End.tscn")
+	get_tree().change_scene("res://Scenes/Screens/Title.tscn")
 
 
 func _on_WithdrawalTimer_timeout():

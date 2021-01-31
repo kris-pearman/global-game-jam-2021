@@ -513,8 +513,23 @@ position = Vector2( -388.266, 272.88 )
 type = "booze"
 value = 4
 
+[node name="Bottle16" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 2177.52, -4502.34 )
+type = "booze"
+value = 4
+
+[node name="Bottle17" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 4201.64, -4317.03 )
+type = "booze"
+value = 4
+
 [node name="Bottle2" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 6315.15, -2192.23 )
+type = "booze"
+value = 1
+
+[node name="Bottle20" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 6286.64, -966.358 )
 type = "booze"
 value = 1
 
@@ -525,6 +540,11 @@ value = 1
 
 [node name="Bottle13" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 1908.09, -675.047 )
+type = "booze"
+value = 1
+
+[node name="Bottle19" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 2606.56, -817.591 )
 type = "booze"
 value = 1
 
@@ -564,7 +584,12 @@ type = "booze"
 value = 3
 
 [node name="Bottle12" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 4405.07, -3185.74 )
+position = Vector2( 4960.99, -3242.76 )
+type = "booze"
+value = 2
+
+[node name="Bottle18" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 7213.18, -3242.76 )
 type = "booze"
 value = 2
 
