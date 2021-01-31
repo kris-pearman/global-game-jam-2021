@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgress
 
 
 const drunkenness_start:float = 0.5
