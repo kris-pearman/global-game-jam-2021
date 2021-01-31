@@ -9,6 +9,7 @@ var timer: Timer
 var direction: String = ""
 
 func _ready():
+	$Label.add_color_override("font_color", Color(0.35, 0.32, 0.38, 1))
 	set_direction(direction)
 	
 	timer = Timer.new()
