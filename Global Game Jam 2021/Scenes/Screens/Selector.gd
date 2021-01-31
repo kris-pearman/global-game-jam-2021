@@ -58,6 +58,7 @@ func activate_selection():
 	
 	print('select')
 	if selection == 0:
+		CutScenes.intialise_everything()
 		get_tree().change_scene("res://Sprites/Intro Text/Intro 1.tscn")
 	if selection == 1:
 		get_tree().quit()

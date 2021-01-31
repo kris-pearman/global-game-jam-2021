@@ -4,7 +4,21 @@ var scene_array: Array = []
 var current_scene: Array
 var collected_paintings: int = 0
 
-func _ready():
+
+
+func play_scene(id):
+	collected_paintings += 1
+	current_scene = scene_array[id]
+
+func get_next_message():
+	if(current_scene.size() > 0):
+		return current_scene.pop_front()
+	else:
+		return ""
+
+func intialise_everything():
+	scene_array = []
+	collected_paintings = 0
 	var scene0: Array = [
 		"It was a sunny day \njust like this.",
 		"Still air, muffled \nfootsteps, the gentle give \nof a brush on canvas.",
@@ -42,13 +56,4 @@ func _ready():
 	scene_array.push_back(scene0)
 	scene_array.push_back(scene1)
 	scene_array.push_back(scene2)
-
-func play_scene(id):
-	collected_paintings += 1
-	current_scene = scene_array[id]
-
-func get_next_message():
-	if(current_scene.size() > 0):
-		return current_scene.pop_front()
-	else:
-		return ""
+	
