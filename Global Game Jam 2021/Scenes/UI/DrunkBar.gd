@@ -10,7 +10,7 @@ var increase_step: float = 0.025
 func _ready():
 	Events.drunk_meter = self
 	max_value = 10
-	value = 8.9
+	value = 5
 	Events.connect("player_collided_with_pickup",self,"on_pickup")
 	Events.connect("player_moved",self,"on_player_moved")
 

@@ -114,4 +114,7 @@ func get_next_message():
 		TextMessage.showText(message, message_direction)
 		add_child(TextMessage)
 	else:
-		in_cutscene = false
+		if CutScenes.collected_paintings < 3:
+			in_cutscene = false
+		else:
+			get_tree().change_scene("res://Sprites/Intro Text/Intro 1.tscn")

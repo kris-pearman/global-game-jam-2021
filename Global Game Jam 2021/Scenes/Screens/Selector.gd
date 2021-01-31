@@ -6,7 +6,7 @@ export var transition_dur = 0.5
 export var transition_type = 1
 var cur_vol = 0
 
-var selection = 2
+var selection = 0
 var can_select = true
 var active = false
 
@@ -44,23 +44,20 @@ func change_selection(direction):
 	if direction == 'down':
 		selection -= 1
 	if selection < 0 :
-		selection = 2
-	if selection > 2 :
+		selection = 1
+	if selection > 1 :
 		selection = 0
 
 func updatecursor():
 	if selection == 0:
-		position = Vector2(-550,-150)
+		position = Vector2(-550,-550)
 	if selection == 1:
 		position = Vector2(-550,-350)
-	if selection == 2:
-		position = Vector2(-550,-550)
-	
 
 func activate_selection():
 	
 	print('select')
-	if selection == 2:
+	if selection == 0:
 		get_tree().change_scene("res://Sprites/Intro Text/Intro 1.tscn")
 	if selection == 1:
 		get_tree().quit()
