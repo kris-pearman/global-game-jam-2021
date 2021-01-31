@@ -14,6 +14,7 @@ var message_direction = "right"
 
 func _ready():
 	Events.player = self
+	Events.connect("player_collided_with_pickup", self, "on_pickup")
 
 func _physics_process(delta):
 	if !in_cutscene && !is_drinking:
@@ -91,7 +92,10 @@ func drink_sound_check():
 	if $DrinkTimer.time_left < 0.5:
 			$DrinkTimer/Drinking.stop()
 
-
+func on_pickup(object):
+	if object.type == "booze":
+		drink_animation()
+		set_timer()
 
 func play_cutscene(id):
 	in_cutscene = true
