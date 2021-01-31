@@ -117,4 +117,4 @@ func get_next_message():
 		if CutScenes.collected_paintings < 3:
 			in_cutscene = false
 		else:
-			get_tree().change_scene("res://Sprites/Intro Text/Intro 1.tscn")
+			get_tree().change_scene("res://Scenes/Screens/Ending Scene.tscn")
