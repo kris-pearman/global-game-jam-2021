@@ -15,5 +15,6 @@ func _ready():
 		$Sprite.texture = preload("res://Assets/Paintings/Swan Lake.png")
 		$AudioStreamPlayer2D.stream = preload("res://Sounds/Find painting 2.wav")
 	else:
+		$Sprite.texture = preload("res://Assets/Paintings/Cathedral.png")
 		$AudioStreamPlayer2D.stream = preload("res://Sounds/Find painting 3.wav")
 	connect("body_entered", self, "on_body_entered")

@@ -203,5 +203,5 @@ position = Vector2( 843.618, 204.231 )
 id = 2
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 353.158, 278.054 )
+position = Vector2( 185.158, 374.054 )
 [connection signal="finished" from="Intro" to="." method="_on_Intro_finished"]
