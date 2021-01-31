@@ -121,28 +121,28 @@ tile_data = PoolIntArray( -65534, 0, 6, 2, 0, 6, 65538, 0, 6 )
 [node name="Road" parent="YSort" instance=ExtResource( 10 )]
 tile_data = PoolIntArray( 65535, 0, 3, 0, 0, 131074, 1, 0, 65538 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 472.785, 268.485 )
-
-[node name="Pickup" parent="." instance=ExtResource( 2 )]
+[node name="Pickup" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 791.984, 345.224 )
 type = "coffee"
 value = -1
 
-[node name="Pickup2" parent="." instance=ExtResource( 2 )]
+[node name="Pickup2" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 349.96, 213.129 )
 type = "booze"
 value = 3
 
-[node name="Area2D" parent="." instance=ExtResource( 11 )]
+[node name="Area2D" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 554.713, 183.085 )
 
-[node name="Area2D2" parent="." instance=ExtResource( 11 )]
+[node name="Area2D2" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 102.783, 173.53 )
 id = 1
 
-[node name="Area2D3" parent="." instance=ExtResource( 11 )]
+[node name="Area2D3" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 844.953, 204.231 )
 id = 2
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 472.785, 268.485 )
 [connection signal="timeout" from="CanvasLayer/UI/MarginContainer/DrunkBar/WithdrawalTimer" to="CanvasLayer/UI/MarginContainer/DrunkBar" method="_on_WithdrawalTimer_timeout"]
 [connection signal="finished" from="Intro" to="." method="_on_Intro_finished"]
