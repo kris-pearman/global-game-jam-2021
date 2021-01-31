@@ -40,7 +40,7 @@ func _process(delta):
 			$WithdrawalTimer.stop()
 	if value <= 0:
 		start_game_over_timer()
-	elif value >= max_value - 1:
+	elif value >= max_value - 0.01:
 		start_game_over_timer()
 
 

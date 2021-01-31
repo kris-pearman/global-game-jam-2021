@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/UI/DrunkBar.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/DrunkBarLabel.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.941176, 0.941176, 0.941176, 0.596078 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.231373, 0.231373, 0.231373, 0.486275 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 60.0
+custom_constants/margin_right = 100
+custom_constants/margin_top = 20
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DrunkBar" type="ProgressBar" parent="MarginContainer"]
+margin_left = 100.0
+margin_top = 20.0
+margin_right = 924.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 0, 33 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+step = 0.002
+percent_visible = false
+script = ExtResource( 1 )
+
+[node name="WithdrawalTimer" type="Timer" parent="MarginContainer/DrunkBar"]
+wait_time = 2.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+margin_left = 100.0
+margin_top = 20.0
+margin_right = 924.0
+margin_bottom = 53.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer"]
+margin_left = 388.0
+margin_top = 9.0
+margin_right = 436.0
+margin_bottom = 23.0
+text = "Alcohol"
+script = ExtResource( 2 )
+[connection signal="timeout" from="MarginContainer/DrunkBar/WithdrawalTimer" to="MarginContainer/DrunkBar" method="_on_WithdrawalTimer_timeout"]
