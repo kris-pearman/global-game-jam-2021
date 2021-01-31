@@ -20,7 +20,7 @@ func on_pickup(object):
 
 
 func on_player_moved(player):
-	value -= 0.005
+	value -= 0.002
 
 
 func _process(delta):
