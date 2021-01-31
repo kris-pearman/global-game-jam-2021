@@ -9,7 +9,9 @@ onready var camera = get_parent()
 
 
 func _ready():
-	start(0,250,1)
+	Events.screenshake = self
+	#start(0,250,1)
+	pass
 
 
 func start(duration,frequency,_amplitude):

@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Player/PlayerRig.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sounds/Footsteps fast.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Drinking1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/ScreenShake/Screenshake.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.4062, 16.2031 )
@@ -31,6 +33,11 @@ texture = ExtResource( 2 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 
+[node name="Screenshake" parent="Player/Camera2D" instance=ExtResource( 6 )]
+
 [node name="DrinkTimer" type="Timer" parent="Player"]
 wait_time = 0.9
+
+[node name="Drinking" type="AudioStreamPlayer" parent="Player/DrinkTimer"]
+stream = ExtResource( 5 )
 [connection signal="timeout" from="Player/DrinkTimer" to="Player" method="_on_DrinkTimer_timeout"]
