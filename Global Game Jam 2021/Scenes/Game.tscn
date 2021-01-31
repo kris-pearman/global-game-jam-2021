@@ -27,7 +27,7 @@
 [ext_resource path="res://Assets/Decor/Scenes/FireHydrant.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/Decor/Scenes/Car1.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Assets/Decor/Scenes/Car3.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Assets/Paintings/Cathedral asset.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Paintings/Cathedral.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Assets/Paintings/Chikoha asset.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Decor/Scenes/Car4.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Assets/Decor/Scenes/Lamp2.tscn" type="PackedScene" id=31]
@@ -161,7 +161,7 @@ position = Vector2( 4162.52, -2357.01 )
 position = Vector2( 1663.07, 463.179 )
 
 [node name="Car3" parent="YSort" instance=ExtResource( 27 )]
-position = Vector2( -101.508, 103.877 )
+position = Vector2( -95.8511, 103.877 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
@@ -170,9 +170,7 @@ position = Vector2( 3202.72, -976.062 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 19 )
 
-[node name="Cathedral asset" type="Sprite" parent="YSort"]
-position = Vector2( 5436.37, -6010.05 )
-texture = ExtResource( 28 )
+[node name="Cathedral asset" parent="YSort" instance=ExtResource( 28 )]
 
 [node name="Chikoha asset" type="Sprite" parent="YSort"]
 position = Vector2( 6303.89, -42.6758 )
@@ -227,19 +225,19 @@ position = Vector2( 4869.59, -4955 )
 position = Vector2( 5360.66, -4554.04 )
 
 [node name="Tree23" parent="YSort" instance=ExtResource( 20 )]
-position = Vector2( 5166.54, -5209.16 )
+position = Vector2( 4625.92, -5730.43 )
 
 [node name="Tree24" parent="YSort" instance=ExtResource( 20 )]
 position = Vector2( 5663.1, -4926.18 )
 
 [node name="Tree25" parent="YSort" instance=ExtResource( 22 )]
-position = Vector2( 5788.58, -5238.53 )
+position = Vector2( 6045.97, -5331.87 )
 
 [node name="Tree21" parent="YSort" instance=ExtResource( 22 )]
 position = Vector2( 5541.13, -4657.62 )
 
 [node name="Tree22" parent="YSort" instance=ExtResource( 20 )]
-position = Vector2( 5022.92, -5101.08 )
+position = Vector2( 4541.93, -5301.29 )
 
 [node name="Tree26" parent="YSort" instance=ExtResource( 20 )]
 position = Vector2( 4384.32, -7132.29 )
@@ -572,5 +570,7 @@ position = Vector2( 5436.77, -5409.25 )
 id = 2
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 185.158, 374.054 )
+position = Vector2( 5372.48, -5282.79 )
 [connection signal="finished" from="Intro" to="." method="_on_Intro_finished"]
+
+[editable path="YSort/Cathedral asset"]
