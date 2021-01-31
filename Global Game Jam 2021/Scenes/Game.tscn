@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Pickup/Pickup.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Music/Sober layer.wav" type="AudioStream" id=14]
 [ext_resource path="res://Music/Critical layer.wav" type="AudioStream" id=15]
 [ext_resource path="res://Sounds/Drunkness.wav" type="AudioStream" id=16]
+[ext_resource path="res://Scenes/DrunkBarLabel.gd" type="Script" id=17]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.941176, 0.941176, 0.941176, 0.596078 )
@@ -52,13 +53,16 @@ custom_constants/margin_right = 100
 custom_constants/margin_top = 20
 custom_constants/margin_left = 100
 custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DrunkBar" type="ProgressBar" parent="CanvasLayer/UI/MarginContainer"]
 margin_left = 100.0
 margin_top = 20.0
 margin_right = 924.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 0, 20 )
+margin_bottom = 53.0
+rect_min_size = Vector2( 0, 33 )
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 step = 0.005
@@ -72,17 +76,18 @@ wait_time = 2.0
 margin_left = 100.0
 margin_top = 20.0
 margin_right = 924.0
-margin_bottom = 40.0
+margin_bottom = 53.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/UI/MarginContainer/CenterContainer"]
 margin_left = 388.0
-margin_top = 3.0
+margin_top = 9.0
 margin_right = 436.0
-margin_bottom = 17.0
+margin_bottom = 23.0
 text = "Alcohol"
+script = ExtResource( 17 )
 
 [node name="FadeToBlack" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
