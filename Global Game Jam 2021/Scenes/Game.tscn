@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Pickup/Pickup.tscn" type="PackedScene" id=2]
@@ -11,48 +11,86 @@
 [ext_resource path="res://Assets/Tilesets/Grass.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Tilesets/Road.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Collectable/Collectable.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Music/Critical layer.wav" type="AudioStream" id=12]
-[ext_resource path="res://Music/Sober layer.wav" type="AudioStream" id=13]
+[ext_resource path="res://Scenes/DrunkEffect/DrunkEffect.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Fade/FadeToBlack.gd" type="Script" id=13]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.941176, 0.941176, 0.941176, 0.596078 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.231373, 0.231373, 0.231373, 0.486275 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [node name="Game" type="Node"]
 script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="DrunkEffect" parent="CanvasLayer" instance=ExtResource( 12 )]
+margin_left = 2.67273
+margin_top = 1.7818
+margin_right = 2.67273
+margin_bottom = 1.7818
+
 [node name="UI" type="Control" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI"]
-margin_right = 1025.0
-margin_bottom = 54.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/MarginContainer"]
-margin_right = 1025.0
-margin_bottom = 54.0
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/MarginContainer/VBoxContainer"]
-margin_right = 1025.0
-margin_bottom = 54.0
+margin_right = 1024.0
+margin_bottom = 60.0
 custom_constants/margin_right = 100
 custom_constants/margin_top = 20
 custom_constants/margin_left = 100
 custom_constants/margin_bottom = 20
 
-[node name="DrunkBar" type="ProgressBar" parent="CanvasLayer/UI/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="DrunkBar" type="ProgressBar" parent="CanvasLayer/UI/MarginContainer"]
 margin_left = 100.0
 margin_top = 20.0
-margin_right = 925.0
-margin_bottom = 34.0
+margin_right = 924.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 20 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 1 )
+percent_visible = false
 script = ExtResource( 3 )
+
+[node name="WithdrawalTimer" type="Timer" parent="CanvasLayer/UI/MarginContainer/DrunkBar"]
+wait_time = 2.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/UI/MarginContainer"]
+margin_left = 100.0
+margin_top = 20.0
+margin_right = 924.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/MarginContainer/CenterContainer"]
+margin_left = 388.0
+margin_top = 7.0
+margin_right = 436.0
+margin_bottom = 21.0
+text = "Alcohol"
+
+[node name="FadeToBlack" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.05945
+margin_right = -1.05945
+color = Color( 0, 0, 0, 0 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="Intro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -60,17 +98,13 @@ volume_db = -5.0
 
 [node name="Main" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-
 volume_db = -5.0
 
 [node name="Sober Layer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
 volume_db = -40.0
 
 [node name="Critical Layer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
 volume_db = -40.0
-
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -92,14 +126,24 @@ position = Vector2( 472.785, 268.485 )
 [node name="Pickup" parent="." instance=ExtResource( 2 )]
 position = Vector2( 791.984, 345.224 )
 type = "coffee"
-value = -10
+value = -1000
 
 [node name="Pickup2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 229.181, 212.07 )
 type = "booze"
-value = 10
+value = 1000
+
+[node name="Pickup3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 295.927, 213.129 )
+type = "booze"
+value = 1000
+
+[node name="Pickup4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 349.96, 213.129 )
+type = "booze"
+value = 1000
 
 [node name="Area2D" parent="." instance=ExtResource( 11 )]
 position = Vector2( 208.235, 411.131 )
-
+[connection signal="timeout" from="CanvasLayer/UI/MarginContainer/DrunkBar/WithdrawalTimer" to="CanvasLayer/UI/MarginContainer/DrunkBar" method="_on_WithdrawalTimer_timeout"]
 [connection signal="finished" from="Intro" to="." method="_on_Intro_finished"]
