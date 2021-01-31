@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Global Game Jam 2021"
+config/name="Acrylic Memories"
 run/main_scene="res://Scenes/Screens/Title.tscn"
 boot_splash/image="res://Assets/Main Menu/Bgr.PNG"
 config/icon="res://Assets/Paintings/Swan Lake.png"
