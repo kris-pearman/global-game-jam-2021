@@ -10,4 +10,4 @@ Credits:
     Kris Pearman - Programming, Team Lead
     Lucas Molina - Programming, Level Design, Producing
     Matthew Kurnia - Art & Animation
-    Renrith - Programming, Developer
+    Renrith - Programming
