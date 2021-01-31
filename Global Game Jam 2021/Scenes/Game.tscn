@@ -14,10 +14,10 @@
 [ext_resource path="res://Scenes/DrunkEffect/DrunkEffect.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Fade/FadeToBlack.gd" type="Script" id=13]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.941176, 0.941176, 0.941176, 0.596078 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.231373, 0.231373, 0.231373, 0.486275 )
 border_width_left = 1
 border_width_top = 1
@@ -56,8 +56,8 @@ margin_top = 20.0
 margin_right = 924.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 20 )
-custom_styles/fg = SubResource( 2 )
-custom_styles/bg = SubResource( 1 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
 percent_visible = false
 script = ExtResource( 3 )
 
@@ -68,16 +68,16 @@ wait_time = 2.0
 margin_left = 100.0
 margin_top = 20.0
 margin_right = 924.0
-margin_bottom = 48.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/UI/MarginContainer/CenterContainer"]
 margin_left = 388.0
-margin_top = 7.0
+margin_top = 3.0
 margin_right = 436.0
-margin_bottom = 21.0
+margin_bottom = 17.0
 text = "Alcohol"
 
 [node name="FadeToBlack" type="ColorRect" parent="CanvasLayer"]
