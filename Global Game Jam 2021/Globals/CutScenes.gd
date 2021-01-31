@@ -20,17 +20,6 @@ func intialise_everything():
 	scene_array = []
 	collected_paintings = 0
 	var scene0: Array = [
-		"It was a sunny day \njust like this.",
-		"Still air, muffled \nfootsteps, the gentle give \nof a brush on canvas.",
-		"So peaceful, but at \n the same time brimming with life.\nStreets echoing with the chatter \nof passersby,",
-		"their excitement sending ripples \nthrough the calm water's \nswell.",
-		"Yet spring came, \nand their presence faded. \nColors dimmed, \nlines lost definition,",
-		"shadows haunted \nmy fragile landscapes.",
-		"A part of the world \nhad been lost, \neven as frost gave way to flowers.",
-		"After all, there was \nno point in the beauty\n of blossoming petals",
-		"if no one was around \nto enjoy them."
-		]
-	var scene1: Array = [
 		"Beautiful things were only \nbeautiful because they \ndidn't last.",
 		"I think that's what brought\n  a father and his \ndaughter to my side \nunder this far-reaching",
 		"testament to some bygone glory.",
@@ -41,6 +30,17 @@ func intialise_everything():
 		"When finished, the father paid me \nfar too much for the painting,\nand the daughter beheld \nthe textured oils with awe.",
 		"There was no doubt. \nThey had seen that same \nspecial thing in the world as I did.",
 		"If only I could remember what \n that was."
+		]
+	var scene1: Array = [
+		"It was a sunny day \njust like this.",
+		"Still air, muffled \nfootsteps, the gentle give \nof a brush on canvas.",
+		"So peaceful, but at \n the same time brimming with life.\nStreets echoing with the chatter \nof passersby,",
+		"their excitement sending ripples \nthrough the calm water's \nswell.",
+		"Yet spring came, \nand their presence faded. \nColors dimmed, \nlines lost definition,",
+		"shadows haunted \nmy fragile landscapes.",
+		"A part of the world \nhad been lost, \neven as frost gave way to flowers.",
+		"After all, there was \nno point in the beauty\n of blossoming petals",
+		"if no one was around \nto enjoy them."
 	]
 	var scene2: Array = [
 		"A man came up to me \nafter passing through \nthe vaulted arches.",
