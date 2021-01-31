@@ -44,7 +44,7 @@ func start_game_over_timer():
 	add_child(timer)
 	timer.start()
 	# Stop player controls
-	Events.player.haltOthers = true
+	Events.player.in_cutscene = true
 
 
 func _on_game_over_timer_timeout():
