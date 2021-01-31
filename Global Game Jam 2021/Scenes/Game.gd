@@ -65,7 +65,7 @@ func getTrack3VolumeDb(meterValue, useModifier, threshold):
 	return  (progress * normalisationFactor) + lowerLimit
 	
 func check_drunk_audio():
-	if Events.drunk_meter.value > 8:
+	if Events.drunk_meter.value > 8.6:
 		if !$Drunk.playing:
 			$Drunk.play()
 	else:
