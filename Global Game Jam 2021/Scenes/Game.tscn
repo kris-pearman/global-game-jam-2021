@@ -135,6 +135,14 @@ type = "booze"
 value = 3
 
 [node name="Area2D" parent="." instance=ExtResource( 11 )]
-position = Vector2( 208.235, 411.131 )
+position = Vector2( 554.713, 183.085 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 102.783, 173.53 )
+id = 1
+
+[node name="Area2D3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 844.953, 204.231 )
+id = 2
 [connection signal="timeout" from="CanvasLayer/UI/MarginContainer/DrunkBar/WithdrawalTimer" to="CanvasLayer/UI/MarginContainer/DrunkBar" method="_on_WithdrawalTimer_timeout"]
 [connection signal="finished" from="Intro" to="." method="_on_Intro_finished"]
