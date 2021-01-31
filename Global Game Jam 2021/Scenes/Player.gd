@@ -15,6 +15,7 @@ var message_direction = "right"
 func _ready():
 	Events.player = self
 	Events.connect("player_collided_with_pickup", self, "on_pickup")
+	CutScenes.collected_paintings == 0
 
 func _physics_process(delta):
 	if !in_cutscene && !is_drinking:
@@ -47,10 +48,10 @@ func get_input():
 			velocity.y += 1
 			playerMove = true
 		velocity = velocity.normalized() * speed
-		if Input.is_action_just_pressed("ui_accept"):
-			playerMove = false
-			drink_animation()
-			set_timer()
+#		if Input.is_action_just_pressed("ui_accept"):
+#			playerMove = false
+#			drink_animation()
+#			set_timer()
 
 func check_animation():
 	$PlayerRig.update_animation("run")

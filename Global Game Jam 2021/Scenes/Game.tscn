@@ -514,7 +514,7 @@ type = "booze"
 value = 4
 
 [node name="Bottle2" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 926.997, -1037.63 )
+position = Vector2( 6315.15, -2192.23 )
 type = "booze"
 value = 1
 
@@ -523,8 +523,18 @@ position = Vector2( 2345.72, 533.187 )
 type = "booze"
 value = 1
 
+[node name="Bottle13" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 1908.09, -675.047 )
+type = "booze"
+value = 1
+
+[node name="Bottle14" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 6122.42, -4315.72 )
+type = "booze"
+value = 1
+
 [node name="Bottle4" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 4407.64, -371.91 )
+position = Vector2( 1214.66, -3735.94 )
 type = "booze"
 value = 2
 
@@ -543,6 +553,11 @@ position = Vector2( 4027.69, -2340.49 )
 type = "booze"
 value = 2
 
+[node name="Bottle15" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 3913.65, -373.386 )
+type = "booze"
+value = 2
+
 [node name="Bottle6" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 3310.98, -5103.74 )
 type = "booze"
@@ -554,7 +569,7 @@ type = "booze"
 value = 2
 
 [node name="Bottle7" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 6828.97, -5777.82 )
+position = Vector2( 5774.15, -5749.31 )
 type = "booze"
 value = 2
 
@@ -580,7 +595,7 @@ position = Vector2( 5436.77, -5409.25 )
 id = 2
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 5372.48, -5282.79 )
+position = Vector2( 156.413, 341.106 )
 [connection signal="finished" from="Intro" to="." method="_on_Intro_finished"]
 
 [editable path="YSort/Cathedral asset"]
