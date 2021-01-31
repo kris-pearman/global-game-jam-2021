@@ -4,6 +4,8 @@ extends ProgressBar
 const drunkenness_start:float = 0.5
 const withdrawal_start:float = 0.3
 
+var alcohol_increase: float = 0
+var increase_step: float = 0.025
 
 func _ready():
 	Events.drunk_meter = self
@@ -14,7 +16,7 @@ func _ready():
 
 
 func on_pickup(object):
-	value += object.value
+	alcohol_increase += object.value
 
 
 func on_player_moved(player):
@@ -22,6 +24,12 @@ func on_player_moved(player):
 
 
 func _process(delta):
+	if alcohol_increase > increase_step:
+		alcohol_increase -= increase_step
+		value += increase_step
+	elif alcohol_increase < -increase_step:
+		alcohol_increase += increase_step
+		value -= increase_step
 	if ratio >= drunkenness_start:
 		Events.drunk_effect.set_intensity(ratio - drunkenness_start)
 	if ratio <= withdrawal_start:
